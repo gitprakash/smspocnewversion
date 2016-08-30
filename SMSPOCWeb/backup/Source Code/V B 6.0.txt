@@ -1,0 +1,13 @@
+Private Sub Command2_Click()
+Dim WinHttpReq As Object
+Dim sResult As String, strURL As String
+Set WinHttpReq = CreateObject("Msxml2.XMLHTTP")
+strURL = "http://123.63.33.43/blank/sms/user/urlsmstemp.php?username=kapbulk&pass=kap@user!23&senderid=KAPMSG&message=HiTestMessage&dest_mobileno=9738023400&response=Y"
+'Replace the Message & MobileNo with the no to whom you want to send SMS
+With WinHttpReq
+      .Open "GET", strURL, False
+    .Send
+    sResult = .responseText
+ End With
+MsgBox "Status of Sent SMS  is=" & sResult
+End Sub

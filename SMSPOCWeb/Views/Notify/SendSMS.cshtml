@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "SendSMS";
+}
+@Scripts.Render("~/bundles/Messageutility")
+@Scripts.Render("~/bundles/jqgrid")
+@Scripts.Render("~/bundles/Sendsms")
+<style type="text/css">
+    .clnik {
+        margin: 0px 0px 0px 10px;
+    }
+    .tab-panel {
+        min-height: 20px;
+        max-height: 200px;
+        overflow-y: scroll;
+        width: 100%;
+    }
+</style>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Send SMS Form</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div id="smsview" class="col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+
+                <span class="label label-info">Opening SMS <span class="badge" id="opensmscnt"></span></span>
+
+                <span class="label label-info col-lg-offset-1">Available SMS <span class="badge" id="smsbalcnt"></span></span>
+            </div>
+        </div>
+            <div class="row">
+                <div class="input-group col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" >
+                            <h3 class="panel-title">Student List</h3>
+                        </div>
+                        <div class="panel-body tab-panel">
+                            <div id="ContactList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-sm-6 col-md-6 col-lg-2 col-xs-6">
+                        <div class="input-group">
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#StudentModal" data-backdrop="static" data-keyboard="false">Load Students</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-2 col-xs-6">
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#TemplateModal" data-backdrop="static" data-keyboard="false">Select Template</button>
+                        @*<div class="input-group">
+                <span>Message Template</span>
+                <select id="dropdown"></select>
+            </div>*@
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row clearfix">
+
+                <div class="input-group col-lg-12">
+                    <textarea class="form-control text ui-widget-content ui-corner-all" rows="3" style="min-width: 60%" id="txtsms" name="txtsms"></textarea><br />
+                    <p>
+                        <span id="remaining">160 characters remaining</span> <span id="messages">1 message(s)</span>
+                    </p>
+                    <span class="btn btn-primary btn-sm" id="submitMyForm">Send</span>
+                    <button type="button" class="btn btn-danger btn-sm" id="btnclear">Clear</button>
+                </div>
+            </div>
+
+        <div class="modal" id="StudentModal" tabindex="-1" role="dialog" aria-labelledby="StudentModalLabel">
+            <div class="modal-dialog  modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" id="divmodalstudentlist">
+                        <div id="dialog-div"> 
+                            <div id="grid" class="jqGrid">
+
+                                <table id="list"></table>
+                                <div id="pager" style="text-align: center;"> </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success btn-sm" id="btnstudentconfirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="TemplateModal" tabindex="-1"  role="dialog" aria-labelledby="TemplateModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" id="divmodaltemplatelist">
+                        <div id="dialog-div">
+
+                            <div id="grid" class="jqGrid">
+
+                                <table id="templatelist"></table>
+                                <div id="templatepager" style="text-align: center;"> </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success btn-sm" id="btntemplateconfirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
+        </div>
+    </div>
+
+<div class="modal " id="ConfirmModal" tabindex="-1" role="dialog" aria-labelledby="StudentModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            <div class="modal-body" id="divmodalmessage">
+                <div id="divuploadconfirm">
+                    Are you sure want to Send ?
+                    <button type="button" class="btn btn-success btn-sm" data-loading-text="Sending..." autocomplete="off" id="btnsendconfirm">Confirm</button>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-12 col-sm-12" id="ErrorResultArea"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-12 col-sm-12" id="SuccessResultArea"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" id="btn-close" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

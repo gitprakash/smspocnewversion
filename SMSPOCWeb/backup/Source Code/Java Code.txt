@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Properties;
+public class JavaCode{
+public JavaCode() {
+}
+public static void main( String[] args) throws Exception{
+String postData=”";
+String retval = “”;
+//give all Parameters In String
+String Username =”username”;
+String Password = “Password”;
+String MobileNo = “9xxxxxxxxx”;
+String Message = “Test message from java code”;
+String SenderID = “XXXXXX”;
+postData += “username=” + Username + “&password=” + Password + “&to=” +
+MobileNo +”&sender=” + SenderID + “&message=” + Message;
+URL url = new URL(“http://instant.kapsystem.com/web2sms.php?”);
+HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
+urlconnection.setRequestMethod(“POST”);
+urlconnection.setRequestProperty(“Content-Type”,”application/x-www-form-
+urlencoded”);
+urlconnection.setDoOutput(true);
+OutputStreamWriter out = new
+OutputStreamWriter(urlconnection.getOutputStream());
+out.write(postData);
+out.close();
+BufferedReader in = new BufferedReader( new
+InputStreamReader(urlconnection.getInputStream()));
+String decodedString;
+while ((decodedString = in.readLine()) != null) {
+retval += decodedString;
+}
+in.close();
+System.out.println(retval);
+}
+} - See more at: http://bulksms-services.kapsystem.com/tag/bulk-sms-api/#sthash.plY1uHGY.dpuf

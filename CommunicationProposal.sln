@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVCServer", "MVCServer", "{A78C6E39-67BD-4208-B1B4-C0487C5C794A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMSPOCWeb", "SMSPOCWeb\SMSPOCWeb.csproj", "{7FAC15B8-EA1D-447F-A0DC-DEC622A62C47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataServices", "DataServices", "{4E84E1D1-C32F-43E7-A2A4-824C943CBF23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{7C382CE7-1DF7-48FB-9403-D5CFF3D85CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorylibrary", "Repositorylibrary\Repositorylibrary.csproj", "{2E214349-2D29-4B8F-8A74-DE23C80B4C7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataServiceLibrary", "DataServiceLibrary\DataServiceLibrary.csproj", "{9BDD0DFA-571F-445F-8DCF-73C403274A58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataModel", "DataModel", "{53B82DE5-AC1C-4CE0-9328-F66079DF23D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModelLibrary", "DataModelLibrary\DataModelLibrary.csproj", "{A1CBCA8F-29F1-4789-ABE9-122870984B92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FAC15B8-EA1D-447F-A0DC-DEC622A62C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FAC15B8-EA1D-447F-A0DC-DEC622A62C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FAC15B8-EA1D-447F-A0DC-DEC622A62C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FAC15B8-EA1D-447F-A0DC-DEC622A62C47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E214349-2D29-4B8F-8A74-DE23C80B4C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E214349-2D29-4B8F-8A74-DE23C80B4C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E214349-2D29-4B8F-8A74-DE23C80B4C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E214349-2D29-4B8F-8A74-DE23C80B4C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDD0DFA-571F-445F-8DCF-73C403274A58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDD0DFA-571F-445F-8DCF-73C403274A58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDD0DFA-571F-445F-8DCF-73C403274A58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDD0DFA-571F-445F-8DCF-73C403274A58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CBCA8F-29F1-4789-ABE9-122870984B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CBCA8F-29F1-4789-ABE9-122870984B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CBCA8F-29F1-4789-ABE9-122870984B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CBCA8F-29F1-4789-ABE9-122870984B92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FAC15B8-EA1D-447F-A0DC-DEC622A62C47} = {A78C6E39-67BD-4208-B1B4-C0487C5C794A}
+		{2E214349-2D29-4B8F-8A74-DE23C80B4C7B} = {7C382CE7-1DF7-48FB-9403-D5CFF3D85CE6}
+		{9BDD0DFA-571F-445F-8DCF-73C403274A58} = {4E84E1D1-C32F-43E7-A2A4-824C943CBF23}
+		{A1CBCA8F-29F1-4789-ABE9-122870984B92} = {53B82DE5-AC1C-4CE0-9328-F66079DF23D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+	EndGlobalSection
+EndGlobal

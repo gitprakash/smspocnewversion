@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DataModelLibrary.SubscriberStandards>
+
+@{
+    ViewBag.Title = "Class List";
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Class List</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th class="text-primary">
+                    @Html.DisplayNameFor(model => model.Standard.Name)
+                </th>
+
+                <th class="text-primary">
+                    @Html.DisplayNameFor(model => model.Active)
+                </th>
+                <th class="text-primary">
+                    @Html.DisplayName("Action")
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Standard.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

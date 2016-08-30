@@ -1,0 +1,32 @@
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Repositorylibrary.dll.config
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Repositorylibrary.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Repositorylibrary.pdb
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.xml
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\obj\Debug\Repositorylibrary.csprojResolveAssemblyReference.cache
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\obj\Debug\Repositorylibrary.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\obj\Debug\Repositorylibrary.pdb
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Repositorylibrary.dll.config
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Repositorylibrary.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Repositorylibrary.pdb
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.xml
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\EntityFramework.SqlServer.xml
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\obj\Debug\Repositorylibrary.csprojResolveAssemblyReference.cache
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\obj\Debug\Repositorylibrary.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\obj\Debug\Repositorylibrary.pdb
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\DynamicLINQ.dll
+E:\Github\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\System.Linq.Dynamic.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\DynamicLINQ.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\Repositorylibrary\bin\Debug\System.Linq.Dynamic.dll

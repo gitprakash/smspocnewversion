@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Message Proposal Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*<div class="navbar navbar-default navbar-fixed-top">
+        <div class="row clearfix col-lg-12">
+            <img class="img-responsive img-rounded" src="~/Content/Image/SMSbanner.png" alt="SMS Portal">
+        </div>
+    </div>*@
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+                    data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            @*<a class="navbar-brand" href="#">TutorialsPoint</a>*@
+        </div>
+
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+@{
+    if (Request.IsAuthenticated)
+    {
+        <ul class="nav navbar-nav">
+
+            @if (User.IsInRole("Admin"))
+            {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Admin
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li>@Html.ActionLink("Manage Subscriber", "List", "User")</li>
+                    <li>@Html.ActionLink("Manage Role", "GetRoleView", "Role")</li>
+                    <li>@Html.ActionLink("Manage UserRole", "GetUserRolesView", "ManageUserRoles")</li>
+                </ul>
+            </li>
+            } 
+    @if (User.IsInRole("Subscriber"))
+    {
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Class Section
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li>@Html.ActionLink("Manage Class", "Index", "Standard")</li>
+                        <li>@Html.ActionLink("Manage Section", "Index", "Section")</li>
+                        <li>@Html.ActionLink("Manage Class Section", "Index", "SubscriberStandardSections")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Student
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li>@Html.ActionLink("Manage Student", "GetContactView", "Contact")</li>
+                        <li>@Html.ActionLink("Upload Bulk Student", "UploadView", "Contact")</li> 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Message
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li>@Html.ActionLink("Message Template", "TemplateView", "Template")</li>
+                        <li>@Html.ActionLink("Send SMS", "Sendsms", "Notify")</li>
+                        <li>@Html.ActionLink("Sent History", "GetMessageHistoryView", "Notify")</li>
+
+                    </ul>
+                </li>
+    }
+            @Html.Partial("_LoginPartial")
+
+
+            </ul>
+        }
+    }
+
+
+        </div>
+
+    </nav>
+
+    @*<div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                
+                @{
+                    if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+                                    Admin Action
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                    <li>@Html.ActionLink("Manage Subscriber", "List", "User")</li>
+                                    <li>@Html.ActionLink("Manage Role", "GetRoleView", "Role")</li>
+                                    <li>@Html.ActionLink("Manage UserRole", "GetUserRolesView", "ManageUserRoles")</li>
+                                </ul>
+                            </div>
+
+
+
+                        }
+                        if (User.IsInRole("Subscriber"))
+                        {
+                            <div class="btn-group ">
+                                <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+                                    Class Section
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu"> 
+                                    <li>@Html.ActionLink("Manage Class", "Index", "Standard")</li>
+                                    <li>@Html.ActionLink("Manage Section", "Index", "Section")</li>
+                                    <li>@Html.ActionLink("Manage Class Section", "Index", "SubscriberStandardSections")</li> 
+                                </ul>
+                            </div>
+                            <div class="btn-group ">
+                                <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+                                     Student
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                    <li>@Html.ActionLink("Manage Student", "GetContactView", "Contact")</li>
+                                    <li>@Html.ActionLink("Upload Bulk Student", "UploadView", "Contact")</li> s
+                                </ul>
+                            </div>
+                            <div class="btn-group ">
+                                <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+                                    Message Action
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu"> 
+                                    <li>@Html.ActionLink("Message Template", "TemplateView", "Template")</li>
+                                    <li>@Html.ActionLink("Send SMS", "Sendsms", "Notify")</li>
+                                    <li>@Html.ActionLink("Sent History", "GetMessageHistoryView", "Notify")</li>
+
+                                </ul>
+                            </div>
+
+
+                        }
+                    }
+                }
+
+
+            </div>
+        </div>
+    </div>*@
+    <div class="container body-content">
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/bootstrap")
+
+        @RenderBody()
+        <hr />
+        <footer style="position: fixed; bottom: 1%;">
+            <p>&copy; @DateTime.Now.Year -POC Application</p>
+        </footer>
+
+        @RenderSection("scripts", required: false)
+        </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMSDevDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GenderType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Subscribers" Relationship="Self.fk_gender" FromRole="GenderType" ToRole="Subscriber" />
+    <NavigationProperty Name="Subscribers1" Relationship="Self.FK_SubscriberGendertype" FromRole="GenderType" ToRole="Subscriber" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Subscriber">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mobile" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="Int32" />
+    <NavigationProperty Name="GenderType" Relationship="Self.fk_gender" FromRole="Subscriber" ToRole="GenderType" />
+    <NavigationProperty Name="GenderType1" Relationship="Self.FK_SubscriberGendertype" FromRole="Subscriber" ToRole="GenderType" />
+  </EntityType>
+  <Association Name="fk_gender">
+    <End Role="GenderType" Type="Self.GenderType" Multiplicity="0..1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenderType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriberGendertype">
+    <End Role="GenderType" Type="Self.GenderType" Multiplicity="0..1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenderType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="Gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SMSDevDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GenderTypes" EntityType="Self.GenderType" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Subscribers" EntityType="Self.Subscriber" />
+    <AssociationSet Name="fk_gender" Association="Self.fk_gender">
+      <End Role="GenderType" EntitySet="GenderTypes" />
+      <End Role="Subscriber" EntitySet="Subscribers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriberGendertype" Association="Self.FK_SubscriberGendertype">
+      <End Role="GenderType" EntitySet="GenderTypes" />
+      <End Role="Subscriber" EntitySet="Subscribers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

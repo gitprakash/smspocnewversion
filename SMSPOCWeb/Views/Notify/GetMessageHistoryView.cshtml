@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "GetMessageHistoryView";
+}
+<style type="text/css">
+    .ui-state-default .ui-icon-customtrash {
+        background: url("/Content/Image/Resend.PNG");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 67px;
+        height: 33px;
+    }
+    .ui-state-default .ui-icon-customedit {
+        background: url("/Content/Image/Edit.PNG");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 45px;
+        height: 33px;
+    }
+</style>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Sent List</h3>
+    </div>
+    <div class="panel-body">
+        <div id="smsview">
+
+            <span class="label label-info">Opening SMS <span class="badge" id="opensmscnt"></span></span>
+
+            <span class="label label-info">Available SMS <span class="badge" id="smsbalcnt"></span></span>
+
+        </div>
+        <div id="grid" class="jqGrid">
+            <table id="list"></table>
+            <div id="pager">
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/Messageutility")
+@Scripts.Render("~/bundles/jqgrid")
+@Scripts.Render("~/bundles/MessageHistory")
+
+

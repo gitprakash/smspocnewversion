@@ -1,0 +1,79 @@
+ public void sendMessage()
+    {
+        int code = 200;
+        BufferedReader bin1 = null;
+        try
+        {
+            URL url = new URL("http://123.63.33.43/sms/user/urlsms_json.php");
+            URLConnection con = url.openConnection();
+            con.setDoOutput(true);
+                // Let the run-time system (RTS) know that we want input.
+            con.setDoInput (true);
+            // Let the RTS know that we want to do output.
+            con.setDoOutput (true);
+            // No caching, we want the real thing.
+            con.setUseCaches (false);
+            // Specify the content type.
+            con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            / wrapper the output stream of the connection with PrintWiter so that we can write plain text to the stream /
+            PrintWriter wr = new PrintWriter(con.getOutputStream(), true);
+
+            / set up the parameters into a string and send it via the output stream /
+            StringBuilder parameters = new StringBuilder();
+            parameters.append("username=" + prop.getProperty("username"));
+            parameters.append("&");
+            parameters.append("password=" + prop.getProperty("pass"));
+            parameters.append("&");
+            parameters.append("senderid=" + prop.getProperty("senderid"));
+            parameters.append("&");
+     parameters.append("mtype=" + "TXT");            
+            parameters.append("&");
+            parameters.append("msgdata=" + this.dataObject.toString());
+            parameters.append("&");            
+            parameters.append("response=" + "Y");
+            parameters.append("&");
+            parameters.append("subdatatype=" + "MU");
+            parameters.append("&");
+            parameters.append("date=" + "");
+            parameters.append("&");
+            parameters.append("time=" + "");
+            wr.print(parameters);
+            System.out.println("parameters : "+parameters.toString());
+            wr.close();
+
+            / wrapper the input stream of the connection with BufferedReader to read plain text, and print the response to the console /
+            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            inputLine1 = br.readLine();
+            System.out.println("output : "+inputLine1);
+            br.close(); 
+            
+            if(inputLine1.contains("ES1001") || inputLine1.contains("ES1002") || inputLine1.contains("ES1003") || inputLine1.contains("ES1004") || inputLine1.contains("ES1005") || inputLine1.contains("ES1006") || inputLine1.contains("ES1007") || inputLine1.contains("ES1008") || inputLine1.contains("ES1009") || inputLine1.contains("ES1010") || inputLine1.contains("ES1011") || inputLine1.contains("ES1012") || inputLine1.contains("ES1013") || inputLine1.contains("ES1014") || inputLine1.contains("ES1015") || inputLine1.contains("ES1016") || inputLine1.contains("ES1017") || inputLine1.contains("ES1018") || inputLine1.contains("Your Request has been not proceed...!") || inputLine1.contains("You have Exceeded your SMS Limit") || inputLine1.contains("Account is Expire"))
+            {
+                System.out.println("Message not processed : "+inputLine1);
+            } 
+            else 
+            {
+                JSONObject jsonRespObject = null;
+                try
+                {
+                    jsonRespObject = new JSONObject(inputLine1);
+                    String result = jsonRespObject.getString("result");
+                    String message = jsonRespObject.getString("message");
+                    String errorcode = jsonRespObject.getString("Errorcode");
+                    response_id = message;
+                }
+                catch (JSONException ex)
+                {
+                    Logger.getLogger(MyRunnable.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                
+                System.out.println("response_id : "+response_id);
+                System.out.println("Message has been sent.");
+            }
+        }
+        catch (IOException e)
+        {
+        }
+    }

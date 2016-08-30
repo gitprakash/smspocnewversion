@@ -1,0 +1,20 @@
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\DataModelLibrary.dll.config
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\DataModelLibrary.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\DataModelLibrary.pdb
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.xml
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\obj\Debug\DataModelLibrary.csprojResolveAssemblyReference.cache
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\obj\Debug\DataModelLibrary.dll
+C:\prakash rajendran\Learning\PrakashGit\SMSPOC\SMSProposal\DataModelLibrary\obj\Debug\DataModelLibrary.pdb
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\DataModelLibrary.dll.config
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\DataModelLibrary.dll
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\DataModelLibrary.pdb
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.dll
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.xml
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\bin\Debug\EntityFramework.SqlServer.xml
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\obj\Debug\DataModelLibrary.csprojResolveAssemblyReference.cache
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\obj\Debug\DataModelLibrary.dll
+E:\Github\SMSPOC\SMSProposal\DataModelLibrary\obj\Debug\DataModelLibrary.pdb

@@ -1,0 +1,108 @@
+﻿Url: http://sms2.kapsystem.com/
+User Name: kapint
+Password: kap@user!123
+API URL: http://123.63.33.43/blank/sms/user/urlsmstemp.php?username=kapint&pass=kap@user!123&senderid=257147&dest_mobileno=XXXXX&message=XXXXXX&response=Y
+Transactional Demo Account Login Credentials:
+Url: http://sms2.kapsystem.com/
+User Name: kapbulk
+Password: kap@user!23
+Sample API: http://123.63.33.43/blank/sms/user/urlsmstemp.php?username=XXXXXX&pass=XXXXX&senderid=XXXXX&dest_mobileno=XXXXX&message=XXXXXX&response=Y
+
+http://checkdnd.com/api/check_dnd_no_api.php?mobiles=8825518669
+
+excel upload and download work
+
+subscriber sms details
+
+contact student
+
+pending task
+1.Registration email
+1.sent history filter export
+2.Message status by using report link
+3.subscriber sms manage.
+4.subscriber 
+
+
+
+client registration
+
+org name
+serder iD -options ED-ABCDEF
+file upload - org govt certificate 
+
+
+get reg details -> send to service provider -> registration
+		get back sender ID
+		
+		ad min panel
+		--> send to service provider 
+		
+		
+activate user.
+		- customer assign to serderid - 
+		- set sms count 
+		- send mail - " serderid assigned"
+		
+mail.cusortservices.com
+		mohan@cusortservices.com
+Cusort@123#
+smtp - 25 /26 
+
+
+
+
+//sendsmsbackup
+$(function () {
+
+    $('#LoadContact').click(function () {
+        $("#dialog-div")
+       .dialog({
+           title: "Student details",
+           resizable: true,
+           autoOpen: true,
+           position: { my: "center top+15%", at: "center top+15%" },
+           minWidth: 700,
+           open: function (event, ui) {
+               ConstructJqGrid();
+           },
+           buttons: {
+               'Confirm': function () {
+                   var ids = $("#list").jqGrid('getGridParam', 'selarrrow');
+                   if (ids.length > 0) {
+
+                       selectedcontactarray = [];
+                       $.each(ids,
+                           function (i, rowid) {
+                               var name = $('#list').jqGrid('getCell', rowid, 'Name');
+                               var rollno = $('#list').jqGrid('getCell', rowid, 'RollNo');
+                               var standard = $('#list').jqGrid('getCell', rowid, 'Class');
+                               var section = $('#list').jqGrid('getCell', rowid, 'Section');
+                               var mobile = $('#list').jqGrid('getCell', rowid, 'Mobile');
+                               var contactvm = {
+                                   'Id': rowid,
+                                   'Name': name,
+                                   'RollNo': rollno,
+                                   'Standard': standard,
+                                   'Section': section,
+                                   'Mobile': mobile
+                               };
+                               if (rowid) {
+                                   selectedcontactarray.push(contactvm);
+                               }
+                           });
+                       CreateLinks();
+                       $(this).dialog('close');
+                   } else {
+                       alert('please select a contact');
+                       return false;
+                   }
+               },
+               'cancel': function () {
+                   $(this).dialog('close');
+               }
+           }
+       });
+    });
+});
+//end 09/08/2016
